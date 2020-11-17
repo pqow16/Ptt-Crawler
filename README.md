@@ -10,7 +10,7 @@
 pip install -r /(資料夾路徑)/requirements.txt
 ```
 3. 將ptt_crawler.py與chromedriver.exe放到任何你喜歡的資料夾，再在你的IDE中執行ptt_crawler.py即可。
-* 這邊提供的chromedriver是給windows系統使用的，如果是其他的作業環境，請到 [chromium]https://chromedriver.chromium.org/downloads 下載對應的版本
+* 這邊提供的chromedriver是給windows系統使用的，如果是其他的作業環境，請到 [chromium](https://chromedriver.chromium.org/downloads) 下載對應的版本
 
 
 ## 使用說明：
@@ -30,7 +30,7 @@ ptt_gossip = ptt_crawl(
 html中輸入你想要的ptt版網址，filename輸入你想要儲存的csv檔檔名，page輸入你想抓前幾頁的頁數，delay中輸入換頁的間隔時間。
 
 
-如果你的chromedriver.exe與ptt_crawler.py不是在同一個資料夾，把以下的code改成你的chromedriver.exe的路徑
+* 如果你的chromedriver.exe與ptt_crawler.py不是在同一個資料夾，把以下的code改成你的chromedriver.exe的路徑
 ```py
-ptt_gossip.driver=("c:\Users\user\Desktop\ptt_crawler.py")
+ptt_gossip.driver=("c:\Users\user\Desktop\chromedriver.exe")
 ```
