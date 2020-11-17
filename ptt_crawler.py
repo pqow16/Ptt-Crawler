@@ -8,18 +8,21 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 import time
-import pathlib
+#import pathlib
+import os
 import re
 import csv
 
 
 class ptt_crawl:
     def __init__(self, html, filename, page, delay):
-        self.html = html   #給定ptt某某版的網址
+        self.html = html
         self.filename = filename
         self.page = page
         self.delay = delay
-        self.driver = str(pathlib.Path(__file__).parent.absolute())+('\chromedriver.exe')
+        #self.driver = pathlib.Path(__file__).parent.absolute().joinpath("chromedriver.exe")
+        self.driver = os.path.join(os.path.dirname((os.path.realpath(__file__))), "chromedriver.exe")
+        print(self.driver)
     
     #開始爬蟲
     def start(self):
@@ -64,12 +67,12 @@ if __name__ == '__main__':
 
     ptt_gossip = ptt_crawl(
         html='https://www.ptt.cc/bbs/Gossiping/index.html', #輸入你想要的ptt某版網址
-        filename='practice.csv',    #爬蟲下來資料的檔案名稱
-        page=20,    #想要爬總共幾頁
+        filename='practice.csv',    #爬蟲下來csv檔的檔案名稱
+        page=20,    #總共爬幾頁
         delay=1.5)    #爬蟲時換頁的間隔時間(秒)，避免變成DDOS
 
-    #ptt_gossip.driver=("c:\Users\user\Desktop\crawler.py") #chromedriver.exe的路徑(含檔案名稱\chromedriver.exe)，預設路徑是這個python檔的路徑
-    ptt_gossip.start()
+    #ptt_gossip.driver=("c:\Users\user\Desktop\crawler.py") #chromedriver.exe的路徑(含檔案名稱/chromedriver.exe)，預設路徑是這個python檔的路徑
+    ptt_gossip.start()  #開始爬蟲
 
     print('done')
 
