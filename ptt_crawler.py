@@ -71,7 +71,7 @@ if __name__ == '__main__':
         page=20,    #總共爬幾頁
         delay=1.5)    #爬蟲時換頁的間隔時間(秒)，避免變成DDOS
 
-    #ptt_gossip.driver=("c:\Users\user\Desktop\crawler.py") #chromedriver.exe的路徑(含檔案名稱/chromedriver.exe)，預設路徑是這個python檔的路徑
+    #ptt_gossip.driver=("c:\Users\user\Desktop\chromedriver.exe") #chromedriver.exe的路徑(含檔案名稱\chromedriver.exe)，預設路徑是這個python檔的路徑
     ptt_gossip.start()  #開始爬蟲
 
     print('done')
